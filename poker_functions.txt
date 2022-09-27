@@ -1,0 +1,861 @@
+CREATE FUNCTION public.bet3_stars(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+    cur_1 CURSOR FOR SELECT DISTINCT(id_mano) FROM movimientos_stars where (tipo='raises' or tipo='bets') and nombre_jugador=p_jugador and ronda = 1;
+    cur_2 CURSOR FOR SELECT * FROM movimientos_stars where ronda = 1 and (tipo='raises'or tipo='bets') and id_mano= reg1.id_mano;
+    v_contRaise double precision := 0;
+    v_cont3bet double precision :=0;
+    v_cont3betTotal double precision :=0;
+	
+
+BEGIN
+   OPEN cur_1;
+   LOOP
+    FETCH cur_1 INTO reg1;
+    EXIT WHEN NOT FOUND;
+	OPEN cur_2;
+	LOOP
+    	 FETCH cur_2 INTO reg2;
+    	 EXIT WHEN NOT FOUND;
+		 v_contRaise := v_contRaise + 1;
+		IF v_contRaise =1 then
+		v_cont3betTotal := v_cont3betTotal +1;
+		END IF;
+   		IF reg2.nombre_jugador = p_jugador  and v_contRaise = 2 then	 		
+	  		v_cont3bet := v_cont3bet+1;	
+		
+		END IF;	
+         	
+	
+    END LOOP;
+	
+	
+	CLOSE cur_2;
+	v_contRaise :=0;
+   END LOOP;
+   
+   CLOSE cur_1;
+   
+  
+   RETURN (v_cont3bet/v_cont3betTotal)*100;
+END
+
+
+$$;
+
+
+ALTER FUNCTION public.bet3_stars(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 249 (class 1255 OID 65585)
+-- Name: bet3_stars9max(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.bet3_stars9max(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+    cur_1 CURSOR FOR SELECT DISTINCT(id_mano) FROM movimientos_9max_stars where tipo='raises' and nombre_jugador=p_jugador and ronda = 1;
+    cur_2 CURSOR FOR SELECT * FROM movimientos_9max_stars where ronda = 1 and tipo='raises' and id_mano= reg1.id_mano;
+    v_contRaise double precision := 0;
+    v_cont3bet double precision :=0;
+    v_cont3betTotal double precision :=0;
+	
+
+BEGIN
+   OPEN cur_1;
+   LOOP
+    FETCH cur_1 INTO reg1;
+    EXIT WHEN NOT FOUND;
+	OPEN cur_2;
+	LOOP
+    	 FETCH cur_2 INTO reg2;
+    	 EXIT WHEN NOT FOUND;
+		 v_contRaise := v_contRaise + 1;
+		IF v_contRaise =1 then
+		v_cont3betTotal := v_cont3betTotal +1;
+		END IF;
+   		IF reg2.nombre_jugador = p_jugador  and v_contRaise = 2 then	 		
+	  		v_cont3bet := v_cont3bet+1;	
+		
+		END IF;	
+         	
+	
+    END LOOP;
+	
+	
+	CLOSE cur_2;
+	v_contRaise :=0;
+   END LOOP;
+   
+   CLOSE cur_1;
+   
+  
+   RETURN (v_cont3bet/CASE v_cont3betTotal WHEN 0 THEN 1 END)*100;
+END
+$$;
+
+
+ALTER FUNCTION public.bet3_stars9max(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 235 (class 1255 OID 16477)
+-- Name: bet3_wina(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.bet3_wina(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+    cur_1 CURSOR FOR SELECT DISTINCT(id_mano) FROM movimientos_wina where tipo='raises' and nombre_jugador=p_jugador and ronda = 1;
+    cur_2 CURSOR FOR SELECT * FROM movimientos_wina where ronda = 1 and tipo='raises' and id_mano= reg1.id_mano;
+    v_contRaise INTEGER := 0;
+    v_cont3bet double precision :=0;
+    v_cont3betTotal double precision :=0;
+	
+
+BEGIN
+   OPEN cur_1;
+   LOOP
+    FETCH cur_1 INTO reg1;
+    EXIT WHEN NOT FOUND;
+	OPEN cur_2;
+	LOOP
+    	 FETCH cur_2 INTO reg2;
+    	 EXIT WHEN NOT FOUND;
+		 v_contRaise := v_contRaise + 1;
+		IF v_contRaise =1 then
+		v_cont3betTotal := v_cont3betTotal +1;
+		END IF;
+   		IF reg2.nombre_jugador = p_jugador  and v_contRaise = 2 then	 		
+	  		v_cont3bet := v_cont3bet+1;	
+		
+		END IF;	
+         	
+	
+    END LOOP;
+	
+	
+	CLOSE cur_2;
+	v_contRaise :=0;
+   END LOOP;
+   
+   CLOSE cur_1;
+   
+  
+   RETURN (v_cont3bet/v_cont3betTotal)*100;
+END
+
+
+$$;
+
+
+ALTER FUNCTION public.bet3_wina(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 246 (class 1255 OID 49602)
+-- Name: cbet_stars(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbet_stars(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+    reg3          RECORD;
+    cur_1 CURSOR FOR SELECT DISTINCT(id_mano) FROM movimientos_stars where (tipo='raises' or tipo = 'bets')and nombre_jugador=p_jugador and ronda = 1;
+cur_2 CURSOR FOR SELECT * FROM movimientos_stars where ronda = 1 and id_mano = reg1.id_mano and(tipo='raises' or tipo = 'bets');
+cur_3 CURSOR FOR SELECT * FROM movimientos_stars where ronda = 2 and id_mano = reg1.id_mano and(tipo='raises' or tipo = 'bets');
+v_ultimo BOOLEAN;
+v_primero BOOLEAN;
+v_contcbet double precision :=0;
+v_contcbetTotal double precision :=0;
+BEGIN
+   OPEN cur_1;
+   LOOP
+    FETCH cur_1 INTO reg1;
+    EXIT WHEN NOT FOUND;
+   v_ultimo := false;
+   v_primero := true;
+    OPEN cur_2;
+	LOOP
+    	 FETCH cur_2 INTO reg2;
+    	 EXIT WHEN NOT FOUND;
+   	IF (reg2.tipo='raises' or reg2.tipo = 'bets') and reg2.nombre_jugador = p_jugador then
+	 v_ultimo := true;
+	
+	ELSIF (reg2.tipo='raises'or reg2.tipo = 'bets') and reg2.nombre_jugador <> p_jugador then
+	 v_ultimo := false;
+	END IF;
+     END LOOP;
+	CLOSE cur_2;
+	OPEN cur_3;
+	LOOP
+    	 FETCH cur_3 INTO reg3;
+    	 EXIT WHEN NOT FOUND;
+   		IF (reg3.tipo = 'raises' or reg3.tipo = 'bets') and reg3.nombre_jugador = p_jugador then
+	 		v_primero := true;
+		IF v_primero = true then
+ 			v_contcbetTotal = v_contcbetTotal +1;
+ 		END IF;
+	 		IF v_ultimo = true then
+	  			v_contcbet = v_contcbet +1;
+	 		END IF;
+         	
+		ELSIF (reg3.tipo = 'raises' or reg3.tipo = 'bets')and reg3.nombre_jugador <> p_jugador then
+	 		v_primero := false;
+	 		
+		END IF;
+	
+    END LOOP;
+	CLOSE cur_3;
+
+
+   END LOOP;
+   RETURN round((v_contcbet/v_contcbetTotal)*100);
+END;
+$$;
+
+
+ALTER FUNCTION public.cbet_stars(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 247 (class 1255 OID 65538)
+-- Name: cbet_stars9max(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbet_stars9max(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+    reg3          RECORD;
+    cur_1 CURSOR FOR SELECT DISTINCT(id_mano) FROM movimientos_9max_stars where (tipo='raises' or tipo = 'bets')and nombre_jugador=p_jugador and ronda = 1;
+cur_2 CURSOR FOR SELECT * FROM movimientos_9max_stars where ronda = 1 and id_mano = reg1.id_mano and(tipo='raises' or tipo = 'bets');
+cur_3 CURSOR FOR SELECT * FROM movimientos_9max_stars where ronda = 2 and id_mano = reg1.id_mano and(tipo='raises' or tipo = 'bets');
+v_ultimo BOOLEAN;
+v_primero BOOLEAN;
+v_contcbet double precision :=0;
+v_contcbetTotal double precision :=0;
+BEGIN
+   OPEN cur_1;
+   LOOP
+    FETCH cur_1 INTO reg1;
+    EXIT WHEN NOT FOUND;
+   v_ultimo := false;
+   v_primero := true;
+    OPEN cur_2;
+	LOOP
+    	 FETCH cur_2 INTO reg2;
+    	 EXIT WHEN NOT FOUND;
+   	IF (reg2.tipo='raises' or reg2.tipo = 'bets') and reg2.nombre_jugador = p_jugador then
+	 v_ultimo := true;
+	
+	ELSIF (reg2.tipo='raises'or reg2.tipo = 'bets') and reg2.nombre_jugador <> p_jugador then
+	 v_ultimo := false;
+	END IF;
+     END LOOP;
+	CLOSE cur_2;
+	OPEN cur_3;
+	LOOP
+    	 FETCH cur_3 INTO reg3;
+    	 EXIT WHEN NOT FOUND;
+   		IF (reg3.tipo = 'raises' or reg3.tipo = 'bets') and reg3.nombre_jugador = p_jugador then
+	 		v_primero := true;
+		IF v_primero = true then
+ 			v_contcbetTotal = v_contcbetTotal +1;
+ 		END IF;
+	 		IF v_ultimo = true then
+	  			v_contcbet = v_contcbet +1;
+	 		END IF;
+         	
+		ELSIF (reg3.tipo = 'raises' or reg3.tipo = 'bets')and reg3.nombre_jugador <> p_jugador then
+	 		v_primero := false;
+	 		
+		END IF;
+	
+    END LOOP;
+	CLOSE cur_3;
+
+
+   END LOOP;
+   RETURN round((v_contcbet/v_contcbetTotal)*100);
+END;
+$$;
+
+
+ALTER FUNCTION public.cbet_stars9max(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 236 (class 1255 OID 16479)
+-- Name: cbet_wina(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbet_wina(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+    reg3          RECORD;
+    cur_1 CURSOR FOR SELECT DISTINCT(id_mano) FROM movimientos_wina where tipo='raises' and nombre_jugador=p_jugador and ronda = 1;
+cur_2 CURSOR FOR SELECT * FROM movimientos_wina where ronda = 1 and id_mano = reg1.id_mano;
+cur_3 CURSOR FOR SELECT * FROM movimientos_wina where ronda = 2 and id_mano = reg1.id_mano;
+v_ultimo BOOLEAN;
+v_primero BOOLEAN;
+v_contcbet double precision :=0;
+v_contcbetTotal double precision :=0;
+BEGIN
+   OPEN cur_1;
+   LOOP
+    FETCH cur_1 INTO reg1;
+    EXIT WHEN NOT FOUND;
+   v_ultimo := false;
+   v_primero := true;
+    OPEN cur_2;
+	LOOP
+    	 FETCH cur_2 INTO reg2;
+    	 EXIT WHEN NOT FOUND;
+   	IF reg2.tipo='raises' and reg2.nombre_jugador = p_jugador then
+	 v_ultimo := true;
+	
+	ELSIF reg2.tipo='raises' and reg2.nombre_jugador <> p_jugador then
+	 v_ultimo := false;
+	END IF;
+     END LOOP;
+	CLOSE cur_2;
+	OPEN cur_3;
+	LOOP
+    	 FETCH cur_3 INTO reg3;
+    	 EXIT WHEN NOT FOUND;
+   		IF (reg3.tipo = 'raises' or reg3.tipo = 'bets') and reg3.nombre_jugador = p_jugador then
+	 		v_primero := true;
+		IF v_primero = true then
+ 			v_contcbetTotal = v_contcbetTotal +1;
+ 		END IF;
+	 		IF v_ultimo = true then
+	  			v_contcbet = v_contcbet +1;
+	 		END IF;
+         	
+		ELSIF reg3.tipo = 'raises' and reg3.nombre_jugador <> p_jugador then
+	 		v_primero := false;
+	 		
+		END IF;
+	
+    END LOOP;
+	CLOSE cur_3;
+
+
+   END LOOP;
+   RETURN round((v_contcbet/v_contcbetTotal)*100);
+END;
+
+
+
+
+$$;
+
+
+ALTER FUNCTION public.cbet_wina(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 237 (class 1255 OID 16480)
+-- Name: cbetcall_stars(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbetcall_stars(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_stars where ronda = 2 and tipo= 'raises' and nombre_jugador <> p_jugador ;
+cur_2 CURSOR FOR SELECT * FROM movimientos_stars where ronda = 2 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		
+		
+		IF reg2.tipo = 'calls' and reg2.nombre_jugador = p_jugador then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and ( reg2.tipo = 'folds' or reg2.tipo='raises' or reg2.tipo='bets'or reg2.tipo='calls') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return (v_cont/v_contTotal)*100;
+   
+END
+
+$$;
+
+
+ALTER FUNCTION public.cbetcall_stars(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 245 (class 1255 OID 49223)
+-- Name: cbetcall_stars9max(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbetcall_stars9max(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_9max_stars where ronda = 2 and tipo= 'raises' and nombre_jugador <> p_jugador ;
+cur_2 CURSOR FOR SELECT * FROM movimientos_9max_stars where ronda = 2 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		
+		
+		IF reg2.tipo = 'calls' and reg2.nombre_jugador = p_jugador then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and ( reg2.tipo = 'folds' or reg2.tipo='raises' or reg2.tipo='bets'or reg2.tipo='calls') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return round((v_cont/CASE v_contTotal WHEN 0 THEN 1 END)*100);
+   
+END
+
+$$;
+
+
+ALTER FUNCTION public.cbetcall_stars9max(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 238 (class 1255 OID 16481)
+-- Name: cbetcall_wina(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbetcall_wina(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_wina where ronda = 2;
+cur_2 CURSOR FOR SELECT * FROM movimientos_wina where ronda = 2 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		IF reg2.tipo = 'raises' and reg2.nombre_jugador <> p_jugador then
+	 			 		
+	  		v_raises := true;	 		
+         		
+		END IF;
+		
+		IF reg2.tipo = 'calls' and reg2.nombre_jugador = p_jugador and v_raises = true then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and ( reg2.tipo = 'calls' or reg2.tipo='raises' or reg2.tipo='bets') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return (v_cont/v_contTotal)*100;
+   
+END
+
+
+
+$$;
+
+
+ALTER FUNCTION public.cbetcall_wina(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 239 (class 1255 OID 16482)
+-- Name: cbetcallturn_stars(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbetcallturn_stars(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_stars where ronda = 3;
+cur_2 CURSOR FOR SELECT * FROM movimientos_stars where ronda = 3 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		IF reg2.tipo = 'raises' and reg2.nombre_jugador <> p_jugador then
+	 			 		
+	  		v_raises := true;	 		
+         		
+		END IF;
+		
+		IF reg2.tipo = 'calls' and reg2.nombre_jugador = p_jugador and v_raises = true then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and ( reg2.tipo = 'calls' or reg2.tipo='raises' or reg2.tipo='bets') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return (v_cont/v_contTotal)*100;
+   
+END
+
+
+$$;
+
+
+ALTER FUNCTION public.cbetcallturn_stars(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 244 (class 1255 OID 49224)
+-- Name: cbetcallturn_stars9max(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbetcallturn_stars9max(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_9max_stars where ronda = 3;
+cur_2 CURSOR FOR SELECT * FROM movimientos_9max_stars where ronda = 3 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		IF reg2.tipo = 'raises' and reg2.nombre_jugador <> p_jugador then
+	 			 		
+	  		v_raises := true;	 		
+         		
+		END IF;
+		
+		IF reg2.tipo = 'calls' and reg2.nombre_jugador = p_jugador and v_raises = true then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and ( reg2.tipo = 'calls' or reg2.tipo='raises' or reg2.tipo='bets') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return round((v_cont/CASE v_contTotal WHEN 0 THEN 1 END)*100);
+   
+END
+
+
+$$;
+
+
+ALTER FUNCTION public.cbetcallturn_stars9max(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 240 (class 1255 OID 16483)
+-- Name: cbetcallturn_wina(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.cbetcallturn_wina(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_wina where ronda = 2;
+cur_2 CURSOR FOR SELECT * FROM movimientos_wina where ronda = 3 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		IF reg2.tipo = 'raises' and reg2.nombre_jugador <> p_jugador then
+	 			 		
+	  		v_raises := true;	 		
+         		
+		END IF;
+		
+		IF reg2.tipo = 'calls' and reg2.nombre_jugador = p_jugador and v_raises = true then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and (reg2.tipo='raises' or reg2.tipo='bets'or reg2.tipo='raises') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return (v_cont/v_contTotal)*100;
+   
+END
+
+
+
+$$;
+
+
+ALTER FUNCTION public.cbetcallturn_wina(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 241 (class 1255 OID 16484)
+-- Name: foldcbet_stars(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.foldcbet_stars(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_stars where ronda = 2 and tipo= 'raises' and nombre_jugador <> p_jugador ;
+cur_2 CURSOR FOR SELECT * FROM movimientos_stars where ronda = 2 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		
+		
+		IF reg2.tipo = 'folds' and reg2.nombre_jugador = p_jugador then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and ( reg2.tipo = 'folds' or reg2.tipo='raises' or reg2.tipo='bets'or reg2.tipo='calls') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return (v_cont/v_contTotal)*100;
+   
+END
+
+$$;
+
+
+ALTER FUNCTION public.foldcbet_stars(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 243 (class 1255 OID 49225)
+-- Name: foldcbet_stars9max(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.foldcbet_stars9max(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_9max_stars where ronda = 2 and tipo= 'raises' and nombre_jugador <> p_jugador ;
+cur_2 CURSOR FOR SELECT * FROM movimientos_9max_stars where ronda = 2 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		
+		
+		IF reg2.tipo = 'folds' and reg2.nombre_jugador = p_jugador then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and ( reg2.tipo = 'folds' or reg2.tipo='raises' or reg2.tipo='bets'or reg2.tipo='calls') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return round((v_cont/CASE v_contTotal WHEN 0 THEN 1 END)*100);
+   
+END
+
+$$;
+
+
+ALTER FUNCTION public.foldcbet_stars9max(p_jugador text) OWNER TO postgres;
+
+--
+-- TOC entry 242 (class 1255 OID 16485)
+-- Name: foldcbet_wina(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.foldcbet_wina(p_jugador text) RETURNS double precision
+    LANGUAGE plpgsql
+    AS $$DECLARE
+    reg1          RECORD;
+    reg2          RECORD;
+  cur_1 CURSOR FOR SELECT distinct(id_mano) FROM movimientos_wina where ronda = 2;
+cur_2 CURSOR FOR SELECT * FROM movimientos_wina where ronda = 2 and id_mano=reg1.id_mano;
+v_cont double precision := 0;
+v_contTotal double precision := 0;
+v_raises boolean:=false;
+
+BEGIN
+  
+
+	OPEN cur_1;
+	LOOP
+    	 FETCH cur_1 INTO reg1;
+    	 EXIT WHEN NOT FOUND;
+		OPEN cur_2;
+		LOOP
+    		FETCH cur_2 INTO reg2;
+			 EXIT WHEN NOT FOUND;
+   		IF reg2.tipo = 'raises' and reg2.nombre_jugador <> p_jugador then
+	 			 		
+	  		v_raises := true;	 		
+         		
+		END IF;
+		
+		IF reg2.tipo = 'folds' and reg2.nombre_jugador = p_jugador and v_raises = true then
+			v_cont := v_cont+1;
+	 		RAISE  info 'value of v_raises : %', v_cont;
+		END IF;
+		IF reg2.nombre_jugador=p_jugador and (reg2.tipo = 'folds'or reg2.tipo='raises' or reg2.tipo='bets'or reg2.tipo='calls') then
+		v_contTotal := v_contTotal +1;
+		
+	 
+	END IF;
+	END LOOP;
+		v_raises := true;
+		CLOSE cur_2;
+    END LOOP;
+	
+  return (v_cont/v_contTotal)*100;
+   
+END
+
+
+
+$$;
+
+
+ALTER FUNCTION public.foldcbet_wina(p_jugador text) OWNER TO postgres;

@@ -1,0 +1,1 @@
+'http://82.223.16.122:8080/SpringBootJwtAuthentication-0.0.1/post

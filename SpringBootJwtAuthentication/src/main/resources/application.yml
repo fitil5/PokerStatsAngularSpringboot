@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pokerjava3
+    username: postgres
+    password: Legiones23-"
+    hikari:
+      minimumIdle: 10
+      maximumPoolSize: 100
+      idleTimeout: 10000
+      connectionTimeout: 3000000
+      leakDetectionThreshold: 15000000
+    
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+     maxFileSize: 300MB  
+     maxRequestSize: 300MB
+# JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: false
+    properties:
+      hibernate:  
+        jdbc.lob.non_contextual_creation: true
+   
+   
+security:
+ jwt:
+  token:
+   secret-key: mazinger23
+   expire-length: 99999999

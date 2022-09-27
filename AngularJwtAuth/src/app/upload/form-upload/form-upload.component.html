@@ -1,0 +1,25 @@
+
+<p style="font-size: 150%;">You have to upload the last generated or edited txt in the hand history file of the poker program, either pokerstars or winamax.<br>
+  In winamax the default path is C: \ Users \% USERNAME% \ Documents \ Winamax Poker \ accounts<br>
+  In pokerstars the default path is C: \ Users \% USERNAME% \ AppData \ Local \ PokerStars \ HandHistory</p>
+  <p style="font-size: 100%;">Available for Pokerstars and Winamax </p>
+  <br><br><br><br>
+  <div *ngIf="currentFileUpload" class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+    aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+    {{progress.percentage}}%</div>
+</div>
+ 
+<label class="btn btn-default">
+  <input type="file" (change)="selectFile($event)">
+</label>
+
+
+<br><br><br><br>
+<p style="font-size: 100%;font-weight: bold;">Stats: </p>
+<p style="font-size: 100%;">Vpip:The percentage of hands the player voluntarily put money into the pot preflop out of all hands. This does not include posting any blind money. </p>
+<p style="font-size: 100%;"> 3bet:	The percentage of times the player made a 3-bet (re-raised a raiser) preflop or on the flop, turn or river when they had the opportunity. This includes all 3-bets, not just those where this player made the original bet.</p>
+<p style="font-size: 100%;">Pfr:The percentage of hands where the player made any raise pre-flop. </p>
+<p style="font-size: 100%;">Mediaf: The percentage of the average pot raise in flop</p>
+<p style="font-size: 100%;">Mediat: The percentage of the average pot raise in turn</p>
+<p style="font-size: 100%;">Mediar: The percentage of the average pot raise in river</p>
