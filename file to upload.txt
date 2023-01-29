@@ -1,0 +1,333 @@
+﻿PokerStars Hand #204648143245:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:26:30 CET [2019/09/27 4:26:30 ET]
+Table 'Prisma' 6-max Seat #4 is the button
+Seat 1: el lobito255 (€3.34 in chips) 
+Seat 2: philou1960 (€1.93 in chips) 
+Seat 3: scratch210714 (€1.82 in chips) 
+Seat 4: Azpila (€2.42 in chips) 
+Seat 5: davidikit (€1.39 in chips) 
+Seat 6: arruchador1 (€0.83 in chips) 
+davidikit: posts small blind €0.01
+arruchador1 is connected 
+arruchador1: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to arruchador1 [3c 2d]
+el lobito255: folds 
+philou1960: calls €0.02
+scratch210714: folds 
+Azpila: calls €0.02
+davidikit: calls €0.01
+arruchador1: checks 
+*** FLOP *** [3h Th Qc]
+davidikit: checks 
+arruchador1: checks 
+philou1960: checks 
+Azpila: bets €0.02
+davidikit: folds 
+arruchador1: folds 
+philou1960: calls €0.02
+*** TURN *** [3h Th Qc] [4s]
+philou1960: checks 
+Azpila: bets €0.04
+philou1960: calls €0.04
+*** RIVER *** [3h Th Qc 4s] [Td]
+philou1960: bets €0.02
+Azpila: folds 
+Uncalled bet (€0.02) returned to philou1960
+philou1960 collected €0.19 from pot
+philou1960: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0.01 
+Board [3h Th Qc 4s Td]
+Seat 1: el lobito255 folded before Flop (didn't bet)
+Seat 2: philou1960 collected (€0.19)
+Seat 3: scratch210714 folded before Flop (didn't bet)
+Seat 4: Azpila (button) folded on the River
+Seat 5: davidikit (small blind) folded on the Flop
+Seat 6: arruchador1 (big blind) folded on the Flop
+
+
+
+PokerStars Hand #204648157940:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:27:37 CET [2019/09/27 4:27:37 ET]
+Table 'Prisma' 6-max Seat #5 is the button
+Seat 1: el lobito255 (€3.34 in chips) 
+Seat 2: philou1960 (€2.04 in chips) 
+Seat 3: scratch210714 (€1.82 in chips) 
+Seat 4: Azpila (€2.34 in chips) 
+Seat 5: davidikit (€1.37 in chips) 
+Seat 6: arruchador1 (€0.81 in chips) 
+arruchador1: posts small blind €0.01
+el lobito255: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to arruchador1 [3s 3h]
+philou1960: calls €0.02
+scratch210714: folds 
+Azpila: raises €0.02 to €0.04
+davidikit: folds 
+arruchador1: folds 
+el lobito255: calls €0.02
+philou1960: calls €0.02
+*** FLOP *** [4h 9d Qs]
+el lobito255: bets €0.02
+philou1960: calls €0.02
+Azpila: raises €0.04 to €0.06
+el lobito255: calls €0.04
+philou1960: calls €0.04
+*** TURN *** [4h 9d Qs] [Qh]
+el lobito255: checks 
+philou1960: checks 
+Azpila: bets €0.08
+el lobito255: calls €0.08
+philou1960: folds 
+*** RIVER *** [4h 9d Qs Qh] [5c]
+el lobito255: checks 
+Azpila: bets €0.16
+el lobito255: folds 
+Uncalled bet (€0.16) returned to Azpila
+Azpila collected €0.44 from pot
+Azpila: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.47 | Rake €0.03 
+Board [4h 9d Qs Qh 5c]
+Seat 1: el lobito255 (big blind) folded on the River
+Seat 2: philou1960 folded on the Turn
+Seat 3: scratch210714 folded before Flop (didn't bet)
+Seat 4: Azpila collected (€0.44)
+Seat 5: davidikit (button) folded before Flop (didn't bet)
+Seat 6: arruchador1 (small blind) folded before Flop
+
+
+
+PokerStars Hand #204648169918:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:28:32 CET [2019/09/27 4:28:32 ET]
+Table 'Prisma' 6-max Seat #6 is the button
+Seat 1: el lobito255 (€3.16 in chips) 
+Seat 2: philou1960 (€1.94 in chips) 
+Seat 3: scratch210714 (€1.82 in chips) 
+Seat 4: Azpila (€2.60 in chips) 
+Seat 5: davidikit (€1.37 in chips) 
+Seat 6: arruchador1 (€0.80 in chips) 
+el lobito255: posts small blind €0.01
+philou1960: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to arruchador1 [8d Ts]
+scratch210714: raises €0.04 to €0.06
+Azpila: folds 
+davidikit: folds 
+arruchador1 has timed out
+arruchador1: folds 
+el lobito255: calls €0.05
+philou1960: calls €0.04
+*** FLOP *** [Kd Th 4d]
+el lobito255: checks 
+philou1960: checks 
+Azpila leaves the table
+scratch210714: checks 
+*** TURN *** [Kd Th 4d] [2d]
+el lobito255: checks 
+philou1960: bets €0.02
+scratch210714: calls €0.02
+el lobito255: folds 
+*** RIVER *** [Kd Th 4d 2d] [8s]
+philou1960: bets €0.02
+scratch210714: calls €0.02
+*** SHOW DOWN ***
+philou1960: shows [Kc Jc] (a pair of Kings)
+scratch210714: mucks hand 
+philou1960 collected €0.24 from pot
+Rikkarden joins the table at seat #4 
+*** SUMMARY ***
+Total pot €0.26 | Rake €0.02 
+Board [Kd Th 4d 2d 8s]
+Seat 1: el lobito255 (small blind) folded on the Turn
+Seat 2: philou1960 (big blind) showed [Kc Jc] and won (€0.24) with a pair of Kings
+Seat 3: scratch210714 mucked [5s 5d]
+Seat 4: Azpila folded before Flop (didn't bet)
+Seat 5: davidikit folded before Flop (didn't bet)
+Seat 6: arruchador1 (button) folded before Flop (didn't bet)
+
+
+
+PokerStars Hand #204648183563:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:29:34 CET [2019/09/27 4:29:34 ET]
+Table 'Prisma' 6-max Seat #1 is the button
+Seat 1: el lobito255 (€3.10 in chips) 
+Seat 2: philou1960 (€2.08 in chips) 
+Seat 3: scratch210714 (€1.72 in chips) 
+Seat 5: davidikit (€1.37 in chips) 
+Seat 6: arruchador1 (€0.80 in chips) 
+philou1960: posts small blind €0.01
+scratch210714: posts big blind €0.02
+Rikkarden: sits out 
+*** HOLE CARDS ***
+Dealt to arruchador1 [Th 2h]
+davidikit: folds 
+arruchador1: folds 
+el lobito255: folds 
+philou1960: folds 
+Uncalled bet (€0.01) returned to scratch210714
+scratch210714 collected €0.02 from pot
+scratch210714: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.02 | Rake €0 
+Seat 1: el lobito255 (button) folded before Flop (didn't bet)
+Seat 2: philou1960 (small blind) folded before Flop
+Seat 3: scratch210714 (big blind) collected (€0.02)
+Seat 5: davidikit folded before Flop (didn't bet)
+Seat 6: arruchador1 folded before Flop (didn't bet)
+
+
+
+PokerStars Hand #204648185250:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:29:42 CET [2019/09/27 4:29:42 ET]
+Table 'Prisma' 6-max Seat #2 is the button
+Seat 1: el lobito255 (€3.10 in chips) 
+Seat 2: philou1960 (€2.07 in chips) 
+Seat 3: scratch210714 (€1.73 in chips) 
+Seat 4: Rikkarden (€2 in chips) 
+Seat 5: davidikit (€1.37 in chips) 
+Seat 6: arruchador1 (€0.80 in chips) 
+scratch210714: posts small blind €0.01
+Rikkarden: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to arruchador1 [9s 7h]
+davidikit: folds 
+arruchador1: folds 
+el lobito255: folds 
+philou1960: folds 
+scratch210714: folds 
+Uncalled bet (€0.01) returned to Rikkarden
+Rikkarden collected €0.02 from pot
+Rikkarden: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.02 | Rake €0 
+Seat 1: el lobito255 folded before Flop (didn't bet)
+Seat 2: philou1960 (button) folded before Flop (didn't bet)
+Seat 3: scratch210714 (small blind) folded before Flop
+Seat 4: Rikkarden (big blind) collected (€0.02)
+Seat 5: davidikit folded before Flop (didn't bet)
+Seat 6: arruchador1 folded before Flop (didn't bet)
+
+
+
+PokerStars Hand #204648209041:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:31:30 CET [2019/09/27 4:31:30 ET]
+Table 'Prisma' 6-max Seat #1 is the button
+Seat 1: el lobito255 (€3.10 in chips) 
+Seat 2: philou1960 (€2.02 in chips) 
+Seat 3: scratch210714 (€1.72 in chips) 
+Seat 4: Rikkarden (€1.94 in chips) 
+Seat 5: davidikit (€1.47 in chips) 
+Seat 6: arruchador1 (€0.80 in chips) 
+philou1960: posts small blind €0.01
+scratch210714: posts big blind €0.02
+arruchador1: posts small & big blinds €0.03
+*** HOLE CARDS ***
+Dealt to arruchador1 [8d Ad]
+Rikkarden: folds 
+davidikit: folds 
+arruchador1: raises €0.04 to €0.06
+el lobito255: calls €0.06
+philou1960: calls €0.05
+scratch210714: calls €0.04
+*** FLOP *** [6s 5d Td]
+philou1960: checks 
+scratch210714: bets €0.16
+arruchador1: calls €0.16
+el lobito255: folds 
+philou1960: calls €0.16
+*** TURN *** [6s 5d Td] [Ks]
+philou1960: checks 
+scratch210714: bets €0.58
+arruchador1: calls €0.57 and is all-in
+philou1960: calls €0.58
+*** RIVER *** [6s 5d Td Ks] [3c]
+philou1960: checks 
+scratch210714: bets €0.92 and is all-in
+philou1960: calls €0.92
+*** SHOW DOWN ***
+scratch210714: shows [5s 5h] (three of a kind, Fives)
+philou1960: shows [Ac Qs] (high card Ace)
+scratch210714 collected €1.76 from side pot
+arruchador1: shows [8d Ad] (high card Ace)
+scratch210714 collected €2.29 from main pot
+*** SUMMARY ***
+Total pot €4.30 Main pot €2.29. Side pot €1.76. | Rake €0.25 
+Board [6s 5d Td Ks 3c]
+Seat 1: el lobito255 (button) folded on the Flop
+Seat 2: philou1960 (small blind) showed [Ac Qs] and lost with high card Ace
+Seat 3: scratch210714 (big blind) showed [5s 5h] and won (€4.05) with three of a kind, Fives
+Seat 4: Rikkarden folded before Flop (didn't bet)
+Seat 5: davidikit folded before Flop (didn't bet)
+Seat 6: arruchador1 showed [8d Ad] and lost with high card Ace
+
+
+
+PokerStars Hand #204648222845:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:32:32 CET [2019/09/27 4:32:32 ET]
+Table 'Prisma' 6-max Seat #2 is the button
+Seat 1: el lobito255 (€3.04 in chips) 
+Seat 2: philou1960 (€0.30 in chips) 
+Seat 3: scratch210714 (€4.05 in chips) 
+Seat 4: Rikkarden (€1.94 in chips) 
+Seat 5: davidikit (€1.47 in chips) 
+Seat 6: arruchador1 (€0.83 in chips) 
+scratch210714: posts small blind €0.01
+Rikkarden: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to arruchador1 [Ks 5h]
+davidikit: folds 
+arruchador1: folds 
+el lobito255: folds 
+philou1960: calls €0.02
+scratch210714: folds 
+Rikkarden: checks 
+*** FLOP *** [2s Th 9h]
+Rikkarden: checks 
+philou1960: bets €0.02
+Rikkarden: calls €0.02
+*** TURN *** [2s Th 9h] [8s]
+Rikkarden: checks 
+philou1960: bets €0.26 and is all-in
+Rikkarden: folds 
+Uncalled bet (€0.26) returned to philou1960
+philou1960 collected €0.08 from pot
+philou1960: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.09 | Rake €0.01 
+Board [2s Th 9h 8s]
+Seat 1: el lobito255 folded before Flop (didn't bet)
+Seat 2: philou1960 (button) collected (€0.08)
+Seat 3: scratch210714 (small blind) folded before Flop
+Seat 4: Rikkarden (big blind) folded on the Turn
+Seat 5: davidikit folded before Flop (didn't bet)
+Seat 6: arruchador1 folded before Flop (didn't bet)
+
+
+
+PokerStars Hand #204648232641:  Hold'em No Limit (€0.01/€0.02 EUR) - 2019/09/27 10:33:17 CET [2019/09/27 4:33:17 ET]
+Table 'Prisma' 6-max Seat #3 is the button
+Seat 1: el lobito255 (€3.04 in chips) 
+Seat 2: philou1960 (€0.34 in chips) 
+Seat 3: scratch210714 (€4.04 in chips) 
+Seat 4: Rikkarden (€1.90 in chips) 
+Seat 5: davidikit (€1.47 in chips) 
+Seat 6: arruchador1 (€0.83 in chips) 
+Rikkarden: posts small blind €0.01
+davidikit: posts big blind €0.02
+*** HOLE CARDS ***
+Dealt to arruchador1 [9s As]
+arruchador1 has timed out
+arruchador1: folds 
+el lobito255: folds 
+philou1960: folds 
+scratch210714: folds 
+Rikkarden: folds 
+Uncalled bet (€0.01) returned to davidikit
+davidikit collected €0.02 from pot
+davidikit: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.02 | Rake €0 
+Seat 1: el lobito255 folded before Flop (didn't bet)
+Seat 2: philou1960 folded before Flop (didn't bet)
+Seat 3: scratch210714 (button) folded before Flop (didn't bet)
+Seat 4: Rikkarden (small blind) folded before Flop
+Seat 5: davidikit (big blind) collected (€0.02)
+Seat 6: arruchador1 folded before Flop (didn't bet)
+
+
+

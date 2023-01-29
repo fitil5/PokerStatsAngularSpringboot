@@ -9,130 +9,135 @@
 
 <div id="container" *ngFor="let hud of huds">
     <!--<img src="poker_table.jpg" class="image1" >-->
-    <table id="p1" class="table" *ngIf="hud.p1.nombre">
+    <table id="p1" class="table">
+            <tr>
+
+
+                    <th>Nombre</th>
+                    <th>manos</th>
+                    <th>cbet</th>
+                    <th>vpip</th>
+                    <th>pfr</th>
+                    <th>bet3</th>
+                    <th>mediaCantFlop</th>
+                    <th>mediaCantTurn</th>
+                    <th>mediaCantRiver</th>
+                </tr>
         <tr>
             
             <th>{{hud.p1.nombre}}</th>
-            <th>manos: {{hud.p1.manos}}</th>
-            <th>cbet: {{hud.p1.cbet}}</th> 
-            <th>vpip: {{hud.p1.vpip}}</th>
-            <th>pfr: {{hud.p1.pfr}}</th>
-            <th>3bet: {{hud.p1.bet3}}</th>
-            <th>mediaf: {{hud.p1.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p1.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p1.mediaCantRiver}}</th>
+            <th>{{hud.p1.manos}}</th>
+            <th>{{hud.p1.cbet}}</th> 
+            <th>{{hud.p1.vpip}}</th>
+            <th>{{hud.p1.pfr}}</th>
+            <th>{{hud.p1.bet3}}</th>
+            <th>{{hud.p1.mediaCantFlop}}</th>
+            <th> {{hud.p1.mediaCantTurn}}</th>
+            <th> {{hud.p1.mediaCantRiver}}</th>
           </tr>
-    </table>
-    <table id="p2" class="table" *ngIf="hud.p2.nombre">
+    
         <tr>
             
             <th>{{hud.p2.nombre}}</th>
-            <th>manos: {{hud.p2.manos}}</th>
-            <th>cbet: {{hud.p2.cbet}}</th>
-            <th>vpip: {{hud.p2.vpip}}</th>
-            <th>pfr: {{hud.p2.pfr}}</th>
-            <th>3bet: {{hud.p2.bet3}}</th>
-            <th>mediaf: {{hud.p2.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p2.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p2.mediaCantRiver}}</th>
+            <th> {{hud.p2.manos}}</th>
+            <th> {{hud.p2.cbet}}</th>
+            <th> {{hud.p2.vpip}}</th>
+            <th> {{hud.p2.pfr}}</th>
+            <th> {{hud.p2.bet3}}</th>
+            <th> {{hud.p2.mediaCantFlop}}</th>
+            <th> {{hud.p2.mediaCantTurn}}</th>
+            <th> {{hud.p2.mediaCantRiver}}</th>
           </tr>
-    </table>
-    <table id="p3" class="table" *ngIf="hud.p3.nombre">
+    
         <tr>
             
             <th>{{hud.p3.nombre}}</th>
-            <th>manos: {{hud.p3.manos}}</th>
-            <th>cbet: {{hud.p3.cbet}}</th> 
-            <th>vpip: {{hud.p3.vpip}}</th>
-            <th>pfr: {{hud.p3.pfr}}</th>
-            <th>3bet: {{hud.p3.bet3}}</th>
-            <th>mediaf: {{hud.p3.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p3.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p3.mediaCantRiver}}</th>
+            <th> {{hud.p3.manos}}</th>
+            <th> {{hud.p3.cbet}}</th> 
+            <th> {{hud.p3.vpip}}</th>
+            <th> {{hud.p3.pfr}}</th>
+            <th> {{hud.p3.bet3}}</th>
+            <th> {{hud.p3.mediaCantFlop}}</th>
+            <th> {{hud.p3.mediaCantTurn}}</th>
+            <th> {{hud.p3.mediaCantRiver}}</th>
           </tr>
-    </table>
-    <table id="p4" class="table" *ngIf="hud.p4.nombre">
+    
         <tr>
             
             <th>{{hud.p4.nombre}}</th>
-            <th>manos: {{hud.p4.manos}}</th>
-            <th>cbet: {{hud.p4.cbet}}</th> 
-            <th>vpip: {{hud.p4.vpip}}</th>
-            <th>pfr: {{hud.p4.pfr}}</th>
-            <th>3bet: {{hud.p4.bet3}}</th>
-            <th>mediaf: {{hud.p4.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p4.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p4.mediaCantRiver}}</th>
+            <th> {{hud.p4.manos}}</th>
+            <th> {{hud.p4.cbet}}</th> 
+            <th> {{hud.p4.vpip}}</th>
+            <th> {{hud.p4.pfr}}</th>
+            <th> {{hud.p4.bet3}}</th>
+            <th> {{hud.p4.mediaCantFlop}}</th>
+            <th> {{hud.p4.mediaCantTurn}}</th>
+            <th> {{hud.p4.mediaCantRiver}}</th>
           </tr>
-    </table>
-    <table id="p5" class="table" *ngIf="hud.p5.nombre">
+    
         <tr>
             
             <th>{{hud.p5.nombre}}</th>
-            <th>manos: {{hud.p5.manos}}</th>
-            <th>cbet: {{hud.p5.cbet}}</th> 
-            <th>vpip: {{hud.p5.vpip}}</th>
-            <th>pfr: {{hud.p5.pfr}}</th>
-            <th>3bet: {{hud.p5.bet3}}</th>
-            <th>mediaf: {{hud.p5.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p5.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p5.mediaCantRiver}}</th>
+            <th> {{hud.p5.manos}}</th>
+            <th> {{hud.p5.cbet}}</th> 
+            <th> {{hud.p5.vpip}}</th>
+            <th> {{hud.p5.pfr}}</th>
+            <th> {{hud.p5.bet3}}</th>
+            <th> {{hud.p5.mediaCantFlop}}</th>
+            <th> {{hud.p5.mediaCantTurn}}</th>
+            <th> {{hud.p5.mediaCantRiver}}</th>
         </tr>
-    </table>
-    <table id="p6" class="table" *ngIf="hud.p6.nombre">
+    
         <tr>
             
             <th>{{hud.p6.nombre}}</th>
-            <th>manos: {{hud.p6.manos}}</th>
-            <th>cbet: {{hud.p6.cbet}}</th> 
-            <th>vpip: {{hud.p6.vpip}}</th>
-            <th>pfr: {{hud.p6.pfr}}</th>
-            <th>3bet: {{hud.p6.bet3}}</th>
-            <th>mediaf: {{hud.p6.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p6.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p6.mediaCantRiver}}</th>
+            <th> {{hud.p6.manos}}</th>
+            <th> {{hud.p6.cbet}}</th> 
+            <th> {{hud.p6.vpip}}</th>
+            <th> {{hud.p6.pfr}}</th>
+            <th> {{hud.p6.bet3}}</th>
+            <th> {{hud.p6.mediaCantFlop}}</th>
+            <th> {{hud.p6.mediaCantTurn}}</th>
+            <th> {{hud.p6.mediaCantRiver}}</th>
         </tr>
-    </table>
-    <table id="p7" class="table" *ngIf="hud.p7.nombre">
+    
         <tr>
             
             <th>{{hud.p7.nombre}}</th>
-            <th>manos: {{hud.p7.manos}}</th>
-            <th>cbet: {{hud.p7.cbet}}</th> 
-            <th>vpip: {{hud.p7.vpip}}</th>
-            <th>pfr: {{hud.p7.pfr}}</th>
-            <th>3bet: {{hud.p7.bet3}}</th>
-            <th>mediaf: {{hud.p7.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p7.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p7.mediaCantRiver}}</th>
+            <th> {{hud.p7.manos}}</th>
+            <th> {{hud.p7.cbet}}</th> 
+            <th> {{hud.p7.vpip}}</th>
+            <th> {{hud.p7.pfr}}</th>
+            <th> {{hud.p7.bet3}}</th>
+            <th> {{hud.p7.mediaCantFlop}}</th>
+            <th> {{hud.p7.mediaCantTurn}}</th>
+            <th> {{hud.p7.mediaCantRiver}}</th>
         </tr>
-    </table>
-    <table id="p8" class="table" *ngIf="hud.p8.nombre">
+    
         <tr>
             
             <th>{{hud.p8.nombre}}</th>
-            <th>manos: {{hud.p8.manos}}</th>
-            <th>cbet: {{hud.p8.cbet}}</th> 
-            <th>vpip: {{hud.p8.vpip}}</th>
-            <th>pfr: {{hud.p8.pfr}}</th>
-            <th>3bet: {{hud.p8.bet3}}</th>
-            <th>mediaf: {{hud.p6.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p8.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p8.mediaCantRiver}}</th>
+            <th> {{hud.p8.manos}}</th>
+            <th> {{hud.p8.cbet}}</th> 
+            <th> {{hud.p8.vpip}}</th>
+            <th> {{hud.p8.pfr}}</th>
+            <th> {{hud.p8.bet3}}</th>
+            <th> {{hud.p6.mediaCantFlop}}</th>
+            <th> {{hud.p8.mediaCantTurn}}</th>
+            <th> {{hud.p8.mediaCantRiver}}</th>
         </tr>
-    </table>
-    <table id="p9" class="table" *ngIf="hud.p9.nombre">
+    
         <tr>
             
             <th>{{hud.p9.nombre}}</th>
-            <th>manos: {{hud.p9.manos}}</th>
-            <th>cbet: {{hud.p9.cbet}}</th> 
-            <th>vpip: {{hud.p9.vpip}}</th>
-            <th>pfr: {{hud.p9.pfr}}</th>
-            <th>3bet: {{hud.p9.bet3}}</th>
-            <th>mediaf: {{hud.p9.mediaCantFlop}}</th>
-            <th>mediat: {{hud.p9.mediaCantTurn}}</th>
-            <th>mediar: {{hud.p9.mediaCantRiver}}</th>
+            <th> {{hud.p9.manos}}</th>
+            <th> {{hud.p9.cbet}}</th> 
+            <th> {{hud.p9.vpip}}</th>
+            <th> {{hud.p9.pfr}}</th>
+            <th> {{hud.p9.bet3}}</th>
+            <th> {{hud.p9.mediaCantFlop}}</th>
+            <th> {{hud.p9.mediaCantTurn}}</th>
+            <th> {{hud.p9.mediaCantRiver}}</th>
         </tr>
     </table>
    

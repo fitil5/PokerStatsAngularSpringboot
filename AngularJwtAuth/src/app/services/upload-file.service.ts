@@ -17,7 +17,7 @@ export class UploadFileService {
 
     formdata.append('file', file);
 
-    const req = new HttpRequest('POST', 'http://192.168.1.67:8080/post', formdata, {
+    const req = new HttpRequest('POST', 'http://localhost:8080/post', formdata, {
       reportProgress: true,
       responseType: 'json'
     });

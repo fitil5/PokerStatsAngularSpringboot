@@ -88,7 +88,7 @@ static String getAlphaNumericString(int n)
 	public Hud uploadMultipartFile(@RequestParam("file") MultipartFile file) {
 			try {
 				System.out.println("-------------------------------"+file.getOriginalFilename());
-		File newfile = new File("C:/Users/ignac/AppData/Local/Ficheros/"+file.getOriginalFilename());
+		File newfile = new File("C:/Users/Gaming/AppData/Local/Ficheros/"+file.getOriginalFilename());
 		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"+newfile.getAbsolutePath());
 		if (newfile.isFile()) {
 			newfile.delete();

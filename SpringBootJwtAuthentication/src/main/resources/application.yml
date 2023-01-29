@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/pokerjava3
-    username: postgres
-    password: Legiones23-"
+    username: 
+    password: 
     hikari:
       minimumIdle: 10
       maximumPoolSize: 100
@@ -33,5 +33,5 @@ spring:
 security:
  jwt:
   token:
-   secret-key: mazinger23
+   secret-key: secret-key
    expire-length: 99999999
